@@ -1,0 +1,11 @@
+workflows:
+  default-workflow:
+    name: Default Workflow
+    environment:
+      flutter: stable
+    scripts:
+      - name: Flutter build
+        script: |
+          flutter build appbundle --debug --no-pub
+    artifacts:
+      - build/app/outputs/bundle/debug/app-debug.aab
