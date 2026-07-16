@@ -4,6 +4,9 @@ workflows:
     environment:
       flutter: stable
     scripts:
+      - name: Configure Gradle
+        script: |
+          echo "org.gradle.jvmargs=-Xmx2048m -XX:MaxMetaspaceSize=512m" >> android/gradle.properties
       - name: Flutter build
         script: |
           flutter build appbundle --debug --no-pub
